@@ -1,0 +1,28 @@
+{
+    "version": "07.10.2022",
+    "type": "recipes",
+    "lang": "de",
+    "description": "Kochrezepte",
+    "data": [
+      {
+        "id": "123",
+        "name": "Kartoffelwedges",
+        "zutaten": [
+          "Kartoffeln",
+          "Salz",
+          "Öl"
+        ],
+        "zubereitung": "kommt noch"
+      },
+      {
+        "id": "124",
+        "name": "Pommes",
+        "zutaten": [
+          "Kartoffeln",
+          "Salz",
+          "Öl"
+        ],
+        "zubereitung": "kommt noch"
+      }
+    ]
+  }
