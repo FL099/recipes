@@ -4,7 +4,7 @@
     <button class="navbar-brand" v-on:click="this.$store.commit('toggleSidebar')">
         {{ this.sidebarVisible }}
     </button>
-    <router-link to='../views/About.vue' class=''>About page</router-link>
+    <router-link to='/about' class=''>About page</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
 </nav>
 </template>
 
-<script>
+<script lang="js">
 
 export default {
   computed: {
@@ -37,3 +37,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  nav {
+    position: sticky;
+    top: 0 ;
+    z-index: 111;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    border: 2px solid darkcyan ;
+    border-left: 0px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: rgb(248, 249, 250);
+    user-select: none;
+  }
+</style>

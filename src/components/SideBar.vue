@@ -1,8 +1,9 @@
 <template>
     <aside :class=this.sidebarVisible>
         <ul >
-            <li v-for='item in this.$store.state.dummySubheadingsList' :key='item.htmlId'>
-                <router-link :to=item.htmlId>{{ item.name }}</router-link>
+            <li v-for='item in contents' :key='item'>
+                <router-link :to="{ name: 'recipecard', params: { id: item.id }}">{{ item.name }}
+                </router-link>
             </li>
         </ul>
         <span >{{ this.sidebarVisible }}</span>
@@ -14,6 +15,9 @@
 
 export default {
   computed: {
+    contents() {
+      return this.$store.getters.getItemsList.data;
+    },
     sidebarVisible() { return this.$store.state.sidebarVisible === 'inline-block' ? '' : 'hide'; },
   },
 };
@@ -26,9 +30,9 @@ export default {
         width: 20%;
         height: 90vh;
         position:fixed;
-        float: left;
         top: 60px;
         left: 0;
+        z-index: 110;
     }
 
     aside ul {

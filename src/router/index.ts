@@ -1,12 +1,14 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import RecipeCard from '@/components/molecules/RecipeCard.vue';
 import HomeView from '../views/HomeView.vue';
 import FoodView from '../views/FoodView.vue';
+import PageNotFound from '../views/PageNotFound.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: HomeView,
+    component: FoodView,
   },
   {
     path: '/about',
@@ -20,6 +22,18 @@ const routes: Array<RouteRecordRaw> = [
     path: '/food',
     name: 'food',
     component: FoodView,
+    children: [
+      {
+        path: '#:id',
+        name: 'recipecard',
+        component: RecipeCard,
+      },
+    ],
+  },
+  {
+    path: '/:catchAll(.*)*',
+    name: 'PageNotFound',
+    component: PageNotFound,
   },
 ];
 

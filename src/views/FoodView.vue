@@ -1,33 +1,36 @@
 <template>
-    <div>
-      <h1>Gongldongl</h1>
-        <div v-for="recipe in recipes" :key="recipe.name">
-            <div class="left">
-                <img alt="{{ recipe.altText }}"/>
-                <div class="ingredients" >
-                    <ul>
-                        <li v-for="ingredient in recipe.zutaten" :key="ingredient.name">
-                            {{ ingredient.name }}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="right">
-                <div class="paragraph" v-for="step in recipe.data" :key="step.id"></div>
-            </div>
-        </div>
+    <div class="look" :style="`--width: ${computedWidth}`">
+      <h1>Recipes collection</h1>
+      <RecipeCard v-for="(recipe, index) in recipes.data" :key="index" :recipe="recipe">
+      </RecipeCard>
     </div>
 </template>
 
 <script>
-// import { Vue } from 'vue-class-component';
+import RecipeCard from '../components/molecules/RecipeCard.vue';
 
 export default {
   created() {
     return this.$store.dispatch('getItems', { kindOfItem: 'food' });
   },
   computed: {
-    recipes() { return this.$store.state.displayList.data; },
+    recipes() {
+      return this.$store.getters.getItemsList;
+    },
+    computedWidth() { return this.$store.state.sidebarVisible === 'inline-block' ? '80%' : '100%'; },
+  },
+  components: {
+    RecipeCard,
   },
 };
 </script>
+
+<style scoped>
+@media screen and (min-width: 768px) {
+  .card {
+    --width: 100%;
+    width: var(--width);
+    margin-left: calc(100% - var(--width));
+  }
+}
+</style>
