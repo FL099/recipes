@@ -25,12 +25,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../styles/_variables.scss";
+
 @media screen and (min-width: 768px) {
   .card {
     --width: 100%;
-    width: var(--width);
-    margin-left: calc(100% - var(--width));
+    width: calc((var(--width) - $std-margin) - $std-margin);
+    margin-left: calc((100% - var(--width)) + $std-margin);
+    margin-right: $std-margin;
+
+    &:hover {
+      transform: scale(1.01);
+    }
   }
 }
 </style>

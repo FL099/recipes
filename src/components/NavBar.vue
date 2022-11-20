@@ -15,10 +15,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+            Other pages
           </a>
           <ul class="dropdown-menu">
-            <li><router-link to="/food">Food</router-link></li>
+            <li><router-link to="/food">Rezepte</router-link></li>
+            <li><router-link to="/add">Hinzufügen</router-link></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
@@ -38,7 +39,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../styles/variables";
+
   nav {
     position: sticky;
     top: 0 ;
@@ -51,7 +54,19 @@ export default {
     border-left: 0px;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    background-color: rgb(248, 249, 250);
+    background-color: $bg-base;
     user-select: none;
+  }
+
+  li a{
+    text-decoration: none;
+    font-weight: 400;
+    padding: 7px 14px;
+    width: 100%;
+    display: block;
+  }
+  li a:hover {
+    font-weight: bold;
+    background-color: lightgrey;
   }
 </style>

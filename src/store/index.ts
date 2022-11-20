@@ -11,7 +11,11 @@ export default createStore({
   },
   getters: {
     getVis: () => 'state.sidebarVisible',
-    getItemsList(state) {
+    getItemsList(state, type = 'all') {
+      if (type !== 'all') {
+        console.log('not yet implemented #1');
+        return state.displayList;
+      }
       return state.displayList;
     },
   },
@@ -26,6 +30,7 @@ export default createStore({
   },
   actions: {
     getItems(state, kindOfItem: string) {
+      // TODO: kindOfItem bei abfrage mitgeben
       fetch('exampleRecipes.json')
         .then((resp) => resp.json())
         .then((json) => {
@@ -35,7 +40,7 @@ export default createStore({
           console.log(error);
         });
       // this.state.displayList = JSON.parse(this.state.dummyJSON);
-      return true;
+      return this.state.displayList;
     },
   },
   modules: {

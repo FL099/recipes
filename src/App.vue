@@ -21,12 +21,19 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+@import "styles/_variables.scss";
+
+* {
+  color: $col-base;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $col-d-blue;
+  background-color: $canvas;
 }
 
 nav {
@@ -34,11 +41,19 @@ nav {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $link-col;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $link-col-active;
+    }
+
+    &:hover {
+      color: $link-col-active;
     }
   }
+}
+
+.text-muted {
+  color: $col-muted !important;
 }
 </style>

@@ -1,54 +1,101 @@
 {
-    "version": "07.10.2022",
-    "type": "recipes",
-    "lang": "de",
-    "description": "Kochrezepte",
-    "data": [
-      {
-        "id": "123",
-        "name": "Kartoffelwedges",
-        "img": "link1",
-        "altText": "Food pic",
-        "portions": "1",
-        "updated": "11.11.2022",
-        "ingredients": [
-          {"name": "Kartoffeln",
-           "amount": "3"},
-          {"name": "Salz",
-           "amount": "1Msp"},
-          {"name": "Öl",
-           "amount": "1EL"}
-        ],
-        "preparation": [
-          {"title": "Vorbereitung",
-           "content": "Kartoffeln schälen..."},
-          {"title": "Zubereitung",
-           "content": "Kartoffeln mit Öl und Salz vermengen..."}
-        ],
-        "additionalText": "blabla"
-      },
-      {
-        "id": "124",
-        "name": "Pommes",
-        "img": "link",
-        "altText": "Food pic2",
-        "portions": "1",
-        "updated": "11.11.2022",
-        "ingredients": [
-          {"name": "Kartoffeln",
-           "amount": "3"},
-          {"name": "Salz",
-           "amount": "1Msp"},
-          {"name": "Öl",
-           "amount": "1EL"}
-        ],
-        "preparation": [
-          {"title": "Vorbereitung",
-           "content": "Kartoffeln schälen..."},
-          {"title": "Zubereitung",
-           "content": "Kartoffeln mit Öl und Salz vermengen..."}
-        ],
-        "additionalText": "blabla"
-      }
-    ]
-  }
+  "version": "07.10.2022",
+  "type": "recipes",
+  "lang": "de",
+  "description": "Kochrezepte",
+  "data": [
+    {
+      "id": "123",
+      "name": "Kartoffelwedges",
+      "img": "link1",
+      "altText": "Food pic",
+      "portions": 1,
+      "updated": "11.11.2022",
+      "categories": ["food", "side"],
+      "keywords":["kartoffel", "einfach"],
+      "ingredients": [
+        {"name": "Kartoffeln",
+         "amount": 3,
+         "unit": ""},
+        {"name": "Salz",
+         "amount": 1,
+         "unit": "Msp"},
+        {"name": "Öl",
+         "amount": 1,
+         "unit": "EL"}
+      ],
+      "preparation": [
+        {"title": "Vorbereitung",
+         "content": "Kartoffeln schälen..."},
+        {"title": "Zubereitung",
+         "content": "Kartoffeln mit Öl und Salz vermengen..."}
+      ],
+      "additionalText": "blabla"
+    },
+    {
+      "id": "124",
+      "name": "Pommes",
+      "img": "link",
+      "altText": "Food pic2",
+      "portions": 1,
+      "updated": "11.11.2022",
+      "categories": ["food", "side"],
+      "keywords":["kartoffel", "einfach"],
+      "ingredients": [
+        {"name": "Kartoffeln",
+         "amount": 3,
+         "unit": ""},
+        {"name": "Salz",
+         "amount": 1,
+         "unit": "Msp"},
+        {"name": "Öl",
+         "amount": 1,
+         "unit": "EL"}
+      ],
+      "preparation": [
+        {"title": "Vorbereitung",
+         "content": "Kartoffeln schälen..."},
+        {"title": "Zubereitung",
+         "content": "Kartoffeln mit Öl und Salz vermengen..."}
+      ],
+      "additionalText": "blabla"
+    },
+    {
+      "id": "125",
+      "name": "Flammkuchen",
+      "img": "link",
+      "altText": "Food pic3",
+      "portions": 2,
+      "updated": "20.11.2022",
+      "categories": ["food", "snack", "main"],
+      "keywords":["Rahm", "einfach", "schnell"],
+      "ingredients": [
+        {"name": "Mehl",
+         "amount": 60,
+         "unit": "g"},
+        {"name": "Wasser",
+         "amount": 30,
+         "unit": "ml"},
+        {"name": "Salz",
+         "amount": 1,
+         "unit": "Msp"},
+        {"name": "Öl",
+         "amount": 1,
+         "unit": "EL"},
+        {"name": "Sauerrahm",
+         "amount": 100,
+         "unit": "g"},
+        {"name": "Speck",
+         "amount": 3,
+         "unit": "Scheiben"}
+      ],
+      "preparation": [
+        {"title": "Vorbereitung",
+         "content": "Mehl, Wasser, Salz und Öl verrühren, beiseite stellen, in der Zwischenzeit Speck in streifen schneiden"},
+        {"title": "Zubereitung",
+         "content": "Ofen vorheizen, Teig dünn ausrollen, mit Sauerrahm beschmieren, Speck darauf verteilen und für ca 8min in den Ofen schieben (je nach Temperatur)"}
+      ],
+      "additionalText": "blabla"
+    }
+  ]
+}
