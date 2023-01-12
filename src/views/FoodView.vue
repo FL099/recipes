@@ -1,5 +1,5 @@
 <template>
-    <div class="look" :style="`--width: ${computedWidth}`">
+    <div class="look" :style="`--width: ${ computedWidth }`">
       <h1>Recipes collection</h1>
       <RecipeCard v-for="(recipe, index) in recipes.data" :key="index" :recipe="recipe">
       </RecipeCard>
@@ -28,7 +28,7 @@ export default {
 <style scoped lang="scss">
 @import "../styles/_variables.scss";
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 400px) {
   .card {
     --width: 100%;
     width: calc((var(--width) - $std-margin) - $std-margin);

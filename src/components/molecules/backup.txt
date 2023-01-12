@@ -2,11 +2,14 @@
   <div class="card mb-3" :style="`--width: ${computedWidth}`" :id="recipe.id">
     <div class="row g-0">
       <h3>{{ recipe.name }}</h3>
+    <div class="col-md-4">
+      <img src="" class="img-fluid rounded-start"
+      :alt="recipe.altText">
+    </div>
+    <div class="col-md-8">
       <div class="card-body">
         <div class="card-text row">
-          <div class="col-md-7 img-sec" :style="{backgroundImage:
-            'url('+ require(`../../../public/img/${ recipe.img }`)+')'}">
-            <div class="offset-md-7 col-md-5 ingredients">
+            <div class="col-md-4">
               <h4>Zutaten</h4>
               <ul>
                   <li v-for="ingredient in recipe.ingredients" :key="ingredient.name">
@@ -29,26 +32,19 @@
               </form>
 
             </div>
-          </div>
-          <div class="right col-md-5">
-            <div class="paragraph" v-for="(step,index) in recipe.preparation"
-            :key="index">
-              <h4>{{ step.title }}</h4>
-              <p>{{ step.content }}</p>
+            <div class="right col-md-8">
+                <div class="paragraph" v-for="(step,index) in recipe.preparation"
+                :key="index">
+                  <h4>{{ step.title }}</h4>
+                  <p>{{ step.content }}</p>
+                </div>
+                <p class="card-text">
+                  <small class="text-muted">Last updated {{ recipe.updated }}</small>
+                </p>
             </div>
-            <div class="add-info">
-              <span class="badge bg-secondary" v-for="(category, index) in recipe.categories"
-              :key="index">
-                {{ category }}
-              </span>
-            </div>
-            <p class="card-text">
-              <small class="text-muted">Last updated {{ recipe.updated }}</small>
-            </p>
-          </div>
           </div>
         </div>
-
+      </div>
     </div>
   </div>
 </template>
@@ -78,20 +74,6 @@ export default {
   border: 3px solid $bg-base;
   border-radius: 5px;
   background-color: $card-bg;
-
-  .card-body {
-    padding-left: 12px;
-    padding-bottom: 0px;
-    border-bottom-left-radius: $std-br;
-
-    .add-info {
-      text-align: left;
-
-      .badge {
-        margin-right: 5px;
-      }
-    }
-  }
 }
 
 h3 {
@@ -105,18 +87,6 @@ h4 {
   text-align: left;
 }
 
-.ingredients{
-  background-color: rgba($color: $col-muted, $alpha: 0.7);
-  padding: $std-pad;
-  border-top-left-radius: $std-br;
-  margin-top: 15px;
-
-  h4 {
-    color: $col-sec;
-    opacity: 1;
-  }
-}
-
 h6 {
   text-align: left;
   font-weight: bold;
@@ -124,7 +94,6 @@ h6 {
 
 ul {
   padding-left: 14px;
-  opacity: 1;
 
   li {
     text-align: start;
@@ -133,32 +102,19 @@ ul {
   }
 }
 
-form {
-  margin: 0;
-
-  label {
-    padding: 0;
+label {
+  .amm-label {
+    display: inline-block;
+    width: 70%;
     text-align: left;
-    .amm-label {
-      display: inline-block;
-      width: 70%;
-      text-align: left;
-      padding-left: 5px;
-    }
-
-    input {
-      width: 45px;
-      display: inline-block;
-      border-bottom: 2px solid $col-ter;
-    }
+    padding-left: 5px;
   }
-}
 
-.img-sec {
-  background-color: $col-base;
-  padding-right: 0px;
-  border-bottom-left-radius: $std-br;
-  background-size: cover;
+  input {
+    width: 45px;
+    display: inline-block;
+    border-bottom: 2px solid $col-ter;
+  }
 }
 
 p {
@@ -169,7 +125,6 @@ p {
   .card {
     width: 100%;
     border-radius: 5px;
-    border: none;
   }
 }
 </style>
