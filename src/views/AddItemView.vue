@@ -1,51 +1,43 @@
 <template>
     <h1>Element hinzufügen</h1>
-    <form>
-      <label for="recipeName" class="row">
-        <span class="col-md-2 offset-md-2 col-form-label">Rezeptname</span>
-        <div class="col-md-6">
+    <form class="px-4 row">
+      <div class="col-md-2"></div>
+      <label for="recipeName" class="col-md-8">
+        <span class="form-label">Rezeptname</span>
           <input type="text"
           class="form-control" id="recipeName" value="Name">
+      </label>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <label for="recipePortions" class="col-md-4 offset-md-2">
+        <span class="form-label">Portionen</span>
+        <input type="number"
+          class="form-control" id="recipePortions" value="1">
+      </label>
+      <label for="recipeId" class="col-md-4">
+        <span class="form-label">Id</span>
+        <input type="date"
+          class="form-control" id="recipeId" value="1">
+      </label>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <label for="recipePortions" class="col-md-4">
+        <span class="form-label">Bild</span>
+          <input type="text"
+          class="form-control" id="recipePortions" value="example.jpg">
+      </label>
+      <label for="recipeId" class="col-md-6">
+        <span class="col-md-4 col-form-label">Text</span>
+        <div class="col-md-8">
+          <input type="text"
+          class="form-control" id="recipeId" value="Bildbeschreibung">
         </div>
       </label>
-      <div class="row">
-        <label for="recipePortions" class="col-md-4 offset-md-2 row">
-          <span class="col-md-6 col-form-label">Portionen</span>
-          <div class="col-md-4">
-            <input type="number"
-            class="form-control" id="recipePortions" value="1">
-          </div>
-        </label>
-        <label for="recipeId" class="col-md-4 row">
-          <span class="col-md-4 col-form-label">Id</span>
-          <div class="col-md-8">
-            <input type="date"
-            class="form-control" id="recipeId" value="1">
-          </div>
-        </label>
-      </div>
-      <div class="row">
-        <label for="recipePortions" class="col-md-4 offset-md-2 row">
-          <span class="col-md-6 col-form-label">Bild</span>
-          <div class="col-md-6">
-            <input type="text"
-            class="form-control" id="recipePortions" value="example.jpg">
-          </div>
-        </label>
-        <label for="recipeId" class="col-md-4 row">
-          <span class="col-md-4 col-form-label">Text</span>
-          <div class="col-md-8">
-            <input type="text"
-            class="form-control" id="recipeId" value="Bildbeschreibung">
-          </div>
-        </label>
-      </div>
-      <label for="recipeIngredients" class="row">
-        <span class="col-md-2 offset-md-2 col-form-label">Rezeptname</span>
-        <div class="col-md-6">
+      <div class="col-md-2"></div>
+      <label for="recipeIngredients" class="col-md-8 offset-md-2" >
+        <span class="form-label">Rezeptschritte</span>
           <input type="text"
           class="form-control" id="recipeIngredients" value="1g Zutat1; 2ml Zutat2">
-        </div>
       </label>
     </form>
 </template>
@@ -69,12 +61,18 @@ form {
   padding: 5px 0;
 
   label {
-    text-align: right;
+    text-align: left;
     margin: 0;
+
+    span {
+      color: $col-base;
+    }
 
     input {
       padding: 3px 5px !important;
       margin: 3px 0;
+      color: $col-d-cyan;
+      font-size: 14px;
     }
   }
 }

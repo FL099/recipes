@@ -32,7 +32,7 @@ export default {
   .card {
     --width: 100%;
     width: calc((var(--width) - $std-margin) - $std-margin);
-    margin-left: calc((100% - var(--width)) + $std-margin);
+    margin-left: calc((100% - var(--width)) - 5%);
     margin-right: $std-margin;
 
     &:hover {

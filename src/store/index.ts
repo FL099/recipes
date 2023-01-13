@@ -31,6 +31,7 @@ export default createStore({
   actions: {
     getItems(state, kindOfItem: string) {
       // TODO: kindOfItem bei abfrage mitgeben
+      console.log('getItems: ', kindOfItem);
       fetch('exampleRecipes.json')
         .then((resp) => resp.json())
         .then((json) => {

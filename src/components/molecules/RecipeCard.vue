@@ -59,7 +59,7 @@ export default {
   name: 'RecipeCard',
   props: ['recipe'],
   computed: {
-    computedWidth() { return this.$store.state.sidebarVisible === 'inline-block' ? '80%' : '100%'; },
+    computedWidth() { return this.$store.state.sidebarVisible === 'inline-block' ? '70%' : '90%'; },
   },
   methods: {},
   data() {
@@ -82,6 +82,7 @@ export default {
   .card-body {
     padding-left: 12px;
     padding-bottom: 0px;
+    padding-top: 0;
     border-bottom-left-radius: $std-br;
 
     .add-info {
@@ -110,6 +111,7 @@ h4 {
   padding: $std-pad;
   border-top-left-radius: $std-br;
   margin-top: 15px;
+  backdrop-filter: blur(3px);
 
   h4 {
     color: $col-sec;
@@ -163,6 +165,10 @@ form {
 
 p {
   text-align: justify;
+}
+
+small {
+  font-size: 0.8em;
 }
 
 @media screen and (min-width: 768px) {

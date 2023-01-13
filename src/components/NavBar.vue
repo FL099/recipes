@@ -4,7 +4,7 @@
     <button class="navbar-brand" v-on:click="this.$store.commit('toggleSidebar')">
         {{ this.sidebarVisible }}
     </button>
-    <router-link to='/about' class=''>About page</router-link>
+    <router-link to='/about' class=''>About</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
 
 export default {
   computed: {
-    sidebarVisible() { return this.$store.state.sidebarVisible === 'inline-block' ? '<<|' : '>>|'; },
+    sidebarVisible() { return this.$store.state.sidebarVisible === 'inline-block' ? '<<' : '>>'; },
   },
 };
 </script>
@@ -50,12 +50,16 @@ export default {
 
   .navbar-brand {
     font-weight: bold;
-    border: 2px solid darkcyan ;
+    border: 3px solid darkcyan ;
     border-left: 0px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    background-color: $bg-base;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: darkcyan;
+    background-color: $bg-light;
     user-select: none;
+
   }
 
   li a{
