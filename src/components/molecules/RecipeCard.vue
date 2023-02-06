@@ -34,7 +34,7 @@
             <div class="paragraph" v-for="(step,index) in recipe.preparation"
             :key="index">
               <h4>{{ step.title }}</h4>
-              <p>{{ step.content }}</p>
+              <p v-html="step.content"></p>
             </div>
             <div class="add-info">
               <span class="badge bg-secondary" v-for="(category, index) in recipe.categories"
